@@ -1,0 +1,30 @@
+---
+- name: week 2 homework
+  hosts: all
+  tasks:
+    - name: Print hostname
+      ansible.builtin.debug:
+        var: ansible_facts['hostname']
+    
+    - name: Print IP address
+      ansible.builtin.debug:
+        var: ansible_facts['default_ipv4']['address']
+
+    - name: Print major linux distribution family
+      ansible.builtin.debug:
+        var: ansible_facts['distribution_file_variety']
+    
+    
+    - name: Print Disk Size
+      ansible.builtin.debug:
+        var: ansible_facts['devices']['sda']['size']
+
+
+    - name: RAM/Memory Total
+      ansible.builtin.debug:
+        var: ansible_facts['memtotal_mb']
+
+    - name: Print number of processor cores
+      ansible.builtin.debug:
+        var: ansible_facts['processor_cores']
+
